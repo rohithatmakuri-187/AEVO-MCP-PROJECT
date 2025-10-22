@@ -18,25 +18,41 @@ Think of this as a flight simulator for Aevo trading! It's a website I built tha
 
 ## Want to Try It?
 
-1.  **Download the Code:** Get all the files from this GitHub repository.
-2.  **Start the Backend:**
-    * You'll need Python installed.
-    * Open your computer's terminal (like Command Prompt or Terminal app).
-    * Go into the project folder (`cd your-project-folder-name`).
-    * It's best to set up a Python virtual spot: `python3 -m venv venv` then `source venv/bin/activate` (or `venv\Scripts\activate` on Windows).
-    * Install the needed bits: `pip install -r requirements.txt`.
-    * Run the server: `python aevo_bridge.py`. You should see messages that it's running.
-3.  **Open the Website:** Just double-click the `index.html` file to open it in your web browser.
+1.  **Clone the Repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd <your-repository-name>
+    ```
+2.  **Set up Backend Environment (Recommended):**
+    ```bash
+    # Make sure you have Python 3 installed
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+3.  **Install Backend Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Run the Backend Bridge Server:**
+    ```bash
+    python aevo_bridge.py
+    ```
+    *(This script runs the FastAPI bridge which in turn manages the FastMCP server defined in `server.py`. Ensure `config.py` has the correct settings if modified.)*
+    The server should now be running, likely at `http://127.0.0.1:8081`.
 
-## ⚠️ Heads Up - Important Note!
+5.  **Open the Frontend:**
+    * Open the `index.html` file directly in your web browser. The page should load showing data for ETH.
 
-* **It's a Simulation:** This practice tool uses a **pre-built backend** (`server.py`) with **fake, static data**. It doesn't connect to the *real* Aevo or use live market prices.
-* **No Real Trading/Blockchain:** When you "place an order," it sends a request to the fake backend and *pretends* it went through. **No actual trades happen on the blockchain**, and no real money is involved.
-* **No Transaction Hashes:** Because there are no real blockchain actions, **there won't be any transaction hashes** to show for the submission. I'll be providing screenshots of the website working and talking to the fake backend instead, as requested for non-blockchain tools.
+## ⚠️ Important Note Regarding Submission Requirements
 
-## Built With:
+* **Static Backend:** This project utilizes a **static backend simulation** (`server.py` using predefined data) primarily to demonstrate the front-end functionality and its ability to communicate with an API.
+* **No Blockchain Interaction:** The backend **simulates** order placement responses but **does not interact with the actual Aevo Testnet or Mainnet blockchain**.
+* **No Transaction Hashes:** Consequently, **no real blockchain transaction hashes are generated** or available for submission (addressing Submission Requirement 1).
+* **Inspector Screenshots:** As per Submission Requirement 2 for tools without blockchain transactions, proof of functionality will be provided via **inspector/console screenshots** demonstrating the front-end sending requests to the backend API and receiving simulated confirmations.
 
-* **Frontend:** HTML, CSS, JavaScript (with Chart.js)
-* **Backend:** Python, FastAPI, FastMCP
+## Technologies Used
+
+* **Frontend:** HTML, CSS, JavaScript, Chart.js
+* **Backend:** Python, FastAPI, FastMCP, Uvicorn
 
 Thanks for checking it out!
